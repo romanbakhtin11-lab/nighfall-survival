@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0a14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>Nightfall Survivors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="safe"></div>
+
+  <button id="btn-pause" class="hud-btn" aria-label="Пауза" hidden>❚❚</button>
+  <!-- Главное меню: строится в menu.js -->
+  <div id="menu" class="menu" hidden></div>
+
+  <section id="screen-levelup" class="screen" hidden>
+    <h2>Новый уровень!</h2>
+    <p class="subtitle">Выбери улучшение</p>
+    <div id="choices" class="choices"></div>
+  </section>
+
+  <section id="screen-chest" class="screen" hidden>
+    <h2>Сундук босса</h2>
+    <p class="subtitle">Ты получаешь всё сразу</p>
+    <div id="chest-items" class="choices"></div>
+    <button id="btn-chest" class="btn">Забрать</button>
+  </section>
+
+  <section id="screen-pause" class="screen" hidden>
+    <h2>Пауза</h2>
+    <button id="btn-resume" class="btn">Продолжить</button>
+    <div class="menu-row">
+      <button id="pause-music" class="btn secondary">Музыка</button>
+      <button id="pause-sfx" class="btn secondary">Звуки</button>
+    </div>
+    <button id="btn-quit" class="btn secondary">В меню</button>
+  </section>
+
+  <section id="screen-over" class="screen" hidden>
+    <h2>Ты пал</h2>
+    <div class="stats">
+      <div class="stat"><span class="label">Время</span><span id="stat-time" class="value">00:00</span></div>
+      <div class="stat"><span class="label">Убийства</span><span id="stat-kills" class="value">0</span></div>
+      <div class="stat"><span class="label">Уровень</span><span id="stat-level" class="value">1</span></div>
+    </div>
+    <p id="stat-best" class="best"></p>
+    <div id="run-reward" class="reward"></div>
+    <button id="btn-retry" class="btn">Ещё раз</button>
+    <button id="btn-menu" class="btn secondary">В меню</button>
+  </section>
+
+  <section id="screen-gallery" class="screen gallery-screen" hidden>
+    <div class="gallery-head">
+      <h2>Галерея</h2>
+      <button id="btn-gallery-close" class="btn secondary small">Назад</button>
+    </div>
+    <div id="gallery" class="gallery scroll"></div>
+  </section>
+
+  <div id="rotate">Поверни телефон вертикально</div>
+
+  <script src="audio.js"></script>
+  <script src="settings.js"></script>
+  <script src="palette.js"></script>
+  <script src="sprites.js"></script>
+  <script src="world.js"></script>
+  <script src="heroes.js"></script>
+  <script src="items.js"></script>
+  <script src="meta.js"></script>
+  <script src="enemies.js"></script>
+  <script src="bosses.js"></script>
+  <script src="behaviors.js"></script>
+  <script src="game.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>
